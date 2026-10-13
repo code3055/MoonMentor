@@ -1,0 +1,7 @@
+import {
+  "code3055/moonmentor/moonmentor" @core,
+}
+
+options(
+  link: { "js": { "exports": [ "analyze" ], "format": "esm" } },
+)

@@ -1,0 +1,4 @@
+# concept|correct|hint_used|latency_ms
+syntax|1|0|1200
+syntax|1|0|1800
+option|0|1|42000|none

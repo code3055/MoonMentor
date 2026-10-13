@@ -1,0 +1,7 @@
+syntax|语法基础|1||写出一个接收 Int 并返回 Int 的函数。
+option|Option 与空值|2|syntax|把可能缺失的配置值安全地转换成 Int。
+error|错误处理|3|option|为一个可能失败的解析函数设计 raise/catch 调用。
+pattern|模式匹配|3|syntax|用 match 处理一个包含 Some 和 None 的值。
+collection|集合变换|3|pattern|用 map/filter 完成一次不可变数据转换。
+testing|测试设计|4|error|为解析失败和成功各写一个最小测试。
+async|异步边界|5|error|说明异步函数中错误传播和取消的边界。

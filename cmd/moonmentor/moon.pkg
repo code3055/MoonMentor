@@ -1,0 +1,6 @@
+import {
+  "code3055/moonmentor/moonmentor" @core,
+  "moonbitlang/core/env",
+}
+
+pkgtype(kind: "executable")

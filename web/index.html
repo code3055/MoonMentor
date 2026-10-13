@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoonMentor 学习助手</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <div>
+          <h1>MoonMentor 学习助手</h1>
+          <p>根据最近的练习记录，给出下一步学习建议。</p>
+        </div>
+        <span class="local">本机运行</span>
+      </header>
+
+      <section class="panel input-panel">
+        <div class="panel-title">
+          <div>
+            <h2>练习记录</h2>
+            <p>每行填写：知识点 | 是否答对 | 是否看提示 | 用时（毫秒） | 错误标签</p>
+          </div>
+          <label class="budget">学习时长
+            <strong><span id="budgetValue">15</span> 分钟</strong>
+            <input id="budget" type="range" min="3" max="30" value="15" step="1" />
+          </label>
+        </div>
+        <textarea id="attempts" spellcheck="false" aria-label="练习记录"></textarea>
+        <div class="actions">
+          <button id="analyze" class="primary">分析记录</button>
+          <button id="reset" class="secondary">填入示例</button>
+          <span id="status" class="status">修改记录后点击分析</span>
+        </div>
+      </section>
+
+      <section class="summary">
+        <div class="summary-item"><span>练习次数</span><strong id="attemptCount">—</strong></div>
+        <div class="summary-item"><span>计划用时</span><strong id="sessionTime">—</strong></div>
+        <div class="summary-item"><span>预计提升</span><strong id="sessionGain">—</strong></div>
+        <div class="summary-item"><span>下一知识点</span><strong id="nextConcept">—</strong><small id="nextConfidence">—</small></div>
+      </section>
+
+      <section class="two-columns">
+        <article class="panel">
+          <div class="section-title"><h2>掌握情况</h2><span>0% 表示还不熟，100% 表示较稳定</span></div>
+          <div id="mastery" class="mastery-list"></div>
+        </article>
+        <article class="panel">
+          <div class="section-title"><h2>错误提醒</h2></div>
+          <div id="diagnoses" class="diagnosis-list"></div>
+        </article>
+      </section>
+
+      <section class="panel plan-panel">
+        <div class="section-title"><h2>建议练习</h2><span id="planSummary"></span></div>
+        <div id="session" class="session-list"></div>
+      </section>
+
+      <section class="recommendation">
+        <div>
+          <span class="label">下一步</span>
+          <h2 id="recommendationTitle">等待分析</h2>
+          <p id="recommendationReason">分析后会显示推荐原因。</p>
+          <div id="recommendationPrompt" class="prompt"></div>
+        </div>
+      </section>
+
+      <footer>课程和记录只在当前电脑上处理。</footer>
+    </main>
+    <script type="module" src="./app.js?v=3"></script>
+  </body>
+</html>
