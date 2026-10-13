@@ -11,6 +11,7 @@ pub fn analyze(
     let concepts = @core.parse_curriculum(curriculum_text)
     let attempts = @core.parse_attempts(attempts_text)
     let exercises = @core.parse_exercises(exercises_text)
+    @core.validate_inputs(concepts, attempts, exercises)
     let report = @core.plan_with_exercises(
       concepts, attempts, exercises, budget_minutes,
     )
