@@ -19,7 +19,11 @@ fn parse_int(text : String) -> Int? {
     } else if c < '0' || c > '9' {
       return None
     } else {
-      result = result * 10 + c.to_int() - '0'.to_int()
+      let digit = c.to_int() - '0'.to_int()
+      if result > (2147483647 - digit) / 10 {
+        return None
+      }
+      result = result * 10 + digit
     }
     index += 1
   }
