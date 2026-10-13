@@ -23,6 +23,10 @@ option|0|1|42000|none`;
 const $ = (id) => document.getElementById(id);
 const attemptsInput = $("attempts");
 attemptsInput.value = sampleAttempts;
+try {
+  const saved = localStorage.getItem("moonmentor.attempts");
+  if (saved !== null) attemptsInput.value = saved;
+} catch { /* Browser storage may be disabled. */ }
 
 function esc(value) {
   return String(value ?? "").replace(/[&<>"']/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
@@ -54,6 +58,7 @@ function run() {
     const result = JSON.parse(analyze(curriculum, attemptsInput.value, exercises, budget, "json"));
     if (result.error) throw new Error(result.error);
     render(result);
+    try { localStorage.setItem("moonmentor.attempts", attemptsInput.value); } catch {}
     $("status").textContent = `已完成 · ${new Date().toLocaleTimeString()}`;
   } catch (error) {
     $("status").textContent = `输入错误：${error.message}`;
