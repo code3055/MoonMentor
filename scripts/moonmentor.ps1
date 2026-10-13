@@ -5,6 +5,9 @@ param(
   [ValidateSet("text", "json")][string]$Format = "text"
 )
 
+$ErrorActionPreference = "Stop"
+Set-Location "$PSScriptRoot\.."
+
 $env:MOONMENTOR_CURRICULUM = Get-Content -Raw -Encoding utf8 -LiteralPath $Curriculum
 $env:MOONMENTOR_ATTEMPTS = Get-Content -Raw -Encoding utf8 -LiteralPath $Attempts
 $env:MOONMENTOR_EXERCISES = Get-Content -Raw -Encoding utf8 -LiteralPath $Exercises

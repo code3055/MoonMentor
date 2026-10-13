@@ -1,5 +1,6 @@
 $ErrorActionPreference = "Stop"
 Set-Location "$PSScriptRoot\.."
 moon build --target js --release web/bridge
+if ($LASTEXITCODE -ne 0) { throw "MoonBit build failed; browser bundle was not updated." }
 Copy-Item -Force "_build\js\release\build\web\bridge\bridge.js" "web\bridge.js"
 Write-Output "Built web/bridge.js"
