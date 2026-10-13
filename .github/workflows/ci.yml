@@ -27,5 +27,13 @@ jobs:
         run: moon build --target js --release web/bridge
       - name: Test
         run: moon test
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Test browser integration
+        run: |
+          cp _build/js/release/build/web/bridge/bridge.js web/bridge.js
+          node --test web/app.test.mjs
       - name: Run example
         run: moon run cmd/moonmentor
