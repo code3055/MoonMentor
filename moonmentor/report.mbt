@@ -1,7 +1,7 @@
 ///|
 fn json_escape(text : String) -> String {
   let encoded = text.to_json().stringify()
-  encoded[1:encoded.length() - 1].to_string()
+  encoded[1:encoded.length() - 1].to_owned()
 }
 
 ///|

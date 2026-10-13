@@ -9,7 +9,8 @@ MoonMentor 是一个给 MoonBit 初学者使用的学习记录工具。用户把
 环境要求：MoonBit CLI，`moonc` 不低于 `0.10.14`。
 
 ```powershell
-Set-Location E:\moonbit
+git clone https://github.com/code3055/MoonMentor.git
+Set-Location MoonMentor
 moon fmt --check
 moon check
 moon build
@@ -74,13 +75,13 @@ exercise|题目ID|标题|知识点1,知识点2|难度|分钟|题目|提示
 当前测试覆盖答对/答错、前置知识、多知识点练习、错误标签、时间预算和输入错误：
 
 ```text
-Total tests: 8, passed: 8, failed: 0.
+Total tests: 13, passed: 13, failed: 0.
 ```
 
 GitHub Actions 会运行格式检查、检查、构建、JS bridge 构建和测试。
 
 ## 发布说明
 
-发布前需要把 `moon.mod` 里的仓库地址和维护者名称换成实际公开仓库，再执行 `moon publish`。本地工作区当前没有上传 GitHub，也没有伪造公开仓库地址或提交数量。
+发布前需要把 `moon.mod` 里的仓库地址和维护者名称换成实际公开仓库，再执行 `moon publish`。公开源码：https://github.com/code3055/MoonMentor。
 
 项目使用 MIT License，见 [LICENSE](LICENSE)。
