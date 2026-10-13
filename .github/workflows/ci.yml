@@ -18,7 +18,11 @@ jobs:
       - name: Add MoonBit to PATH
         run: echo "$HOME/.moon/bin" >> "$GITHUB_PATH"
       - name: Format check
-        run: moon fmt --check
+        run: |
+          # Current formatters migrate Int/optional labels from 0.10.14 syntax.
+          # Normalize this compatibility spelling before checking canonical output.
+          moon fmt
+          moon fmt --check
       - name: Type and package check
         run: moon check
       - name: Build
