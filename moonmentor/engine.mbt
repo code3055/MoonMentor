@@ -69,6 +69,8 @@ pub fn apply_attempt(learner : Learner, record : Attempt) -> Unit {
       .get(record.concept)
       .unwrap_or(0) +
       1
+  } else {
+    learner.wrong[record.concept] = 0
   }
 }
 
