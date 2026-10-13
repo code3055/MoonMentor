@@ -21,4 +21,4 @@
 
 5. 在一个新的 MoonBit 项目中执行 `moon add <实际模块名>`，验证库接口。
 
-当前工作区没有执行上传和发布，也没有填写尚不存在的仓库链接。
+已发布：code3055/moonmentor 0.1.0。公开仓库：https://github.com/code3055/MoonMentor。独立项目下载安装后的 API 测试通过。
