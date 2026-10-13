@@ -20,6 +20,7 @@ pub fn analyze(
       @core.report_text(report)
     }
   } catch {
-    @core.ParseError(message) => "{\"error\":\"\{message}\"}"
+    @core.ParseError(message) =>
+      Json::object({ "error": message.to_json() }).stringify()
   }
 }
