@@ -392,6 +392,9 @@ pub fn plan_session(
         continue
       }
       let gain = expected_gain(projected, concepts, item)
+      if gain < 0.0 || item.minutes <= 0 {
+        continue
+      }
       let lookahead_excluded = selected.copy()
       lookahead_excluded.push(item.id)
       let lookahead = future_gain(
